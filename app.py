@@ -6,7 +6,7 @@ from flask_cors import CORS
 app = Flask(__name__)
 CORS(app, resources=
      {r"/chat": {
-         "origins": ["https://rockmanzerogx.github.io","http://localhost:5500", "http://127.0.0.1:5500", "http://localhost:3000"]
+         "origins": ["https://rockmanzerogx.github.io/deepseek-chat-frontend/","http://localhost:5500", "http://127.0.0.1:5500", "http://localhost:3000"]
                                 
         }})
 
