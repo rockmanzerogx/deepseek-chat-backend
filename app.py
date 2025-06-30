@@ -5,7 +5,15 @@ from PyPDF2 import PdfReader
 from flask_cors import CORS
 
 app = Flask(__name__)
-CORS(app)  # Permite todas las origins (ajusta en producción)
+
+CORS(app, resources={
+    r"/chat": {
+        "origins": ["https://rockmanzerogx.github.io"],
+        "methods": ["POST", "OPTIONS"],
+        "allow_headers": ["Content-Type"]
+    }
+})
+
 API_KEY = os.getenv("DEEPSEEK_API_KEY")  # Usa variables de entorno
 API_URL = "https://api.deepseek.com/v1/chat/completions"
 
